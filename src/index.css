@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Alvorada Luxury Marketplace Design System
+Palette: Deep black, pure white, and rich golds
+*/
+
+@layer base {
+  :root {
+    /* Base colors - luxury black and white */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    /* Primary - Rich gold */
+    --primary: 45 100% 60%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 45 100% 70%;
+
+    /* Secondary - Refined gray */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 5%;
+
+    /* Muted tones */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - Warm gold */
+    --accent: 40 85% 55%;
+    --accent-foreground: 0 0% 5%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 45 100% 60%;
+
+    /* Luxury specific colors */
+    --luxury-dark: 0 0% 8%;
+    --luxury-darker: 0 0% 3%;
+    --gold-primary: 45 100% 60%;
+    --gold-secondary: 40 85% 55%;
+    --gold-light: 50 95% 80%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 60%), hsl(40 85% 55%));
+    --gradient-luxury: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 8%));
+    --gradient-hero: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+
+    /* Shadows */
+    --shadow-luxury: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
+    --shadow-gold: 0 10px 30px -10px hsl(45 100% 60% / 0.3);
+    --shadow-elegant: 0 4px 20px hsl(0 0% 0% / 0.1);
+
+    /* Border radius */
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme with luxury black backgrounds */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 100% 60%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 45 100% 70%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 40 85% 55%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 45 100% 60%;
+
+    /* Dark theme luxury colors */
+    --luxury-dark: 0 0% 3%;
+    --luxury-darker: 0 0% 0%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+}
+
+@layer components {
+  /* Luxury button variants */
+  .btn-luxury {
+    @apply bg-gradient-to-r from-primary to-accent text-luxury-dark font-medium px-8 py-3 rounded-lg;
+    @apply hover:shadow-gold transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-luxury-outline {
+    @apply border-2 border-primary text-primary bg-transparent px-8 py-3 rounded-lg;
+    @apply hover:bg-primary hover:text-luxury-dark transition-all duration-300;
+  }
+
+  /* Hero text styles */
+  .hero-title {
+    @apply text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    font-family: "Playfair Display", serif;
+  }
+
+  .hero-subtitle {
+    @apply text-xl md:text-2xl text-muted-foreground font-light;
+  }
+
+  /* Card luxury styling */
+  .card-luxury {
+    @apply bg-card border border-border rounded-xl shadow-elegant;
+    @apply hover:shadow-luxury transition-all duration-500 hover:-translate-y-2;
+  }
+
+  /* Navigation luxury styling */
+  .nav-luxury {
+    @apply backdrop-blur-md bg-background/80 border-b border-border;
+  }
+
+  /* Text animations */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(45 100% 60% / 0.4),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
