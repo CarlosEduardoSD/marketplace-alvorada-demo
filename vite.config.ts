@@ -5,7 +5,9 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/", // <<<<<< adicione isso
+  // Ajuste o base para o nome do repositório quando for um Project Page do GitHub Pages
+  // Ex.: se o repo for "alvorada-demo", use "/alvorada-demo/". Para User/Org Pages, use "/".
+  base: "/marketplace-alvorada-demo/",
   css: {
     postcss: "./postcss.config.js",
   },
